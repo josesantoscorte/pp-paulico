@@ -1,3 +1,6 @@
+#ifndef CACHE_H
+#define CACHE_H
+
 #include <time.h>
 
 #define UNKNOWN -9999999
@@ -10,7 +13,7 @@ enum Kind
     MULTI,
     PUZZLE,
     TRADITIONAL,
-    VIRTUAL,
+    VIRTUAL_KIND,
     WEBCAM
 };
 
@@ -21,7 +24,7 @@ enum Size
     REGULAR,
     LARGE,
     OTHER_SIZE,
-    VIRTUAL,
+    VIRTUAL_SIZE,
     NOT_CHOSEN
 };
 
@@ -38,15 +41,17 @@ typedef struct Cache
     char *state;
     char *owner;
     float lat;
-    Kind kind;
+    enum Kind kind;
     float lon;
-    Size size;
+    enum Size size;
     int difficulty;
     int terrain;
-    Status status;
+    enum Status status;
     time_t time;
     long int founds;
     long int not_founds;
     long int favourites;
     float altitude;
 } Cache;
+
+#endif

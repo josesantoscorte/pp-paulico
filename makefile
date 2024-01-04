@@ -1,8 +1,8 @@
 default:
-	gcc -Wall -Wextra main.c input.c stringutils.c -o prog.exe
+	gcc -Wall -Wextra input.c stringutils.c cache.c main.c -o run
 
 debug:
-	gcc -Wall -Wextra -g main.c input.c stringutils.c -o prog.exe
+	gcc -Wall -Wextra -g input.c stringutils.c cache.c main.c -o run
 
 clean:
-	del prog.exe
+	rm run
